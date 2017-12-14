@@ -10,7 +10,19 @@ class Login extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   componentDidMount(){
+   var currentDate = new Date();
+      var sessionObject = JSON.parse(localStorage.getItem('login'));
+      if (sessionObject !== null) {
+        var expirationDate = sessionObject.expiresAt;
+       
+        if(Date.parse(currentDate) < Date.parse(expirationDate)) {
+              this.StoreAuth()
+              this.props.history.push('/home');
 
+        } else {
+            sessionStorage.removeItem('login');
+        }
+      }
   }
   async handleClick(){
 
