@@ -36,7 +36,7 @@ class Login extends Component {
         let sessionObject = {
             expiresAt: expires,
             data: {
-                user:User
+                user:User[0]
             }
         }
 
@@ -47,7 +47,7 @@ class Login extends Component {
 
       } catch (error) {
         	alert(error)
-      }
+    }
 
   }
   StoreAuth(response){

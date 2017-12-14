@@ -33,6 +33,83 @@ API.login =  (username,password) => {
 
 }
 
+API.getStores = (username) => {
+
+	const url = API.url + 'sites?owner=' + username;
+
+	return new Promise(function(resolve, reject) {
+		axios({
+			method: 'get',
+			url: url,
+			
+		}).then( async (response) => {
+			if (response.data.length) {
+				resolve(response.data);
+			}
+			else{
+				reject('Username or password is wrong');
+			}
+
+	  })
+	  .catch(error => {
+	   	reject(error);
+	  });
+
+	});
+
+}
+
+API.getStores = (username) => {
+
+	const url = API.url + 'sites?owner=' + username;
+
+	return new Promise(function(resolve, reject) {
+		axios({
+			method: 'get',
+			url: url,
+			
+		}).then( async (response) => {
+			if (response.data.length) {
+				resolve(response.data);
+			}
+			else{
+				reject('Username or password is wrong');
+			}
+
+	  })
+	  .catch(error => {
+	   	reject(error);
+	  });
+
+	});
+
+}
+
+API.getDevice = (site_id) => {
+
+	const url = API.url + 'devices?site_id=' + site_id;
+	return new Promise(function(resolve, reject) {
+		axios({
+			method: 'get',
+			url: url,
+			
+		}).then( async (response) => {
+			if (response.data.length) {
+				resolve(response.data);
+			}
+			else{
+				reject('Username or password is wrong');
+			}
+
+	  })
+	  .catch(error => {
+	   	reject(error);
+	  });
+
+	});
+
+}
+
 API.hashPassword = (password) =>{
 	return SHA256(password);
 
