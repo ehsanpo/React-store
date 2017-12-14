@@ -1,0 +1,17 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Your assignment is to implement a small single-page application (SPA), in JavaScript, which displays sites and their devices.",
+  "main": "index.js",
+  "scripts": {
+    "api": "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "json-server": "^0.12.0"
+  }
+}
