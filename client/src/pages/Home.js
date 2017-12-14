@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import API from '../data/Api'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 
 class Home extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {loading: 1, devices : []};
+		this.state = {loading: 1, sites : []};
 		
 	}
 	async componentDidMount(){
@@ -26,25 +32,27 @@ class Home extends Component {
 				alert(error)
 			}
 			for (var i = 0; i < Stores.length; i++) {
-				
 				let device = await API.getDevice(Stores[i].id);
-				devices = devices.concat(device);
+				devices[Stores[i].id] = device;
 			}
-			console.log(devices);
+			localStorage.setItem('Device', JSON.stringify(devices));
 			this.setState({
 				loading : 0,
-				devices: devices
+				sites: Stores
 			});
 		}
 	}
+
 	render() {
 		return (
 			<div>
 				 {this.state.loading ? (
 					'Loading..')
 					 : (
-						this.state.devices.map(function(device, i){
-							return <div key={i}>{device.title} </div>;
+						this.state.sites.map(function(site, i){
+							return <div key={i}>	
+								<Link to={ "/site/"+  site.id}>{site.title}</Link>
+							</div>;
 						})
 					)}
 			</div>
