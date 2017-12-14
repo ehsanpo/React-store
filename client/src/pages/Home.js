@@ -45,13 +45,13 @@ class Home extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="stores">
 				 {this.state.loading ? (
 					'Loading..')
 					 : (
 						this.state.sites.map(function(site, i){
-							return <div key={i}>	
-								<Link to={ "/site/"+  site.id}>{site.title}</Link>
+							return <div key={i} >	
+								<Link to={ "/site/"+ site.id}>{site.title}</Link>
 							</div>;
 						})
 					)}

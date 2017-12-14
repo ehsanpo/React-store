@@ -32,14 +32,16 @@ class Site extends Component {
 	}
 	render() {
 		const pageid = this.props.match.params.id
+
 		return (
-			<div>
+			<div className="stores" >
 				 {this.state.loading ? (
 					'Loading..')
 					 : (
 						this.state.devices.map(function(device, i){
+							
 							return <div key={i}>	
-								<Link to={ "/site/" + pageid +"/device/" + device.id}>{device.title}</Link>
+								<Link to={ "/site/" + pageid +"/device/" + device.id}>{device.title} <span>{device.description}</span> </Link>
 							</div>;
 						})
 					)}
