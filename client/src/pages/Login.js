@@ -14,6 +14,28 @@ class Login extends Component {
   }
   async handleClick(){
 
+     let username = this.refs.username.value;
+     let password = this.refs.password.value
+     try {
+        const User =  await API.login(username,password);
+        let firstDay = new Date();
+        let expires = new Date(firstDay.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+        let sessionObject = {
+            expiresAt: expires,
+            data: {
+                user:User
+            }
+        }
+
+        localStorage.setItem('login', JSON.stringify(sessionObject));
+        this.StoreAuth()
+        this.props.history.push('/home');
+
+
+      } catch (error) {
+        	alert(error)
+      }
 
   }
   StoreAuth(response){
