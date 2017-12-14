@@ -6,12 +6,12 @@ import {
   Redirect,
 } from 'react-router-dom';
 
+import { store } from '../store/Store';
 
-const AUTH = false
 const PrivateRoute = ({ component: Component, ...rest }) => (
 
   <Route {...rest} render={props => (
-   AUTH ? (
+   store.getState('ACTIVATE_GEOD').login.value  ? (
       <Component {...props}/>
     ) : (
       <Redirect to={{
