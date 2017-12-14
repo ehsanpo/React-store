@@ -36,15 +36,6 @@ at:
 
   https://github.com/typicode/json-server
 
-We would appreciate it if you used git for version control (so that we can use
-`git log` to see the development process) but you're not required to do so.
-
-Last but not least, you need to send clear instructions on how the application
-is started so that we can view the result.
-
-If you have any questions about the assignment please don't hesitate to contact
-Martin Lundberg, martin.lundberg@axis.com.
 
 Good luck!
 
-Team AVHS

@@ -1,4 +1,67 @@
-.App {
-  text-align: center;
+body{
+	background-color: #150d2b;
+	margin: 0;
+	padding: 0;
+	color:#fff;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+a{
+	color:#fff;
+	margin: 8px;
+	display: inline-block;
 }
 
+.App {
+  text-align: center;
+  width: 760px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.stores {
+    display: flex;
+    justify-content: center;
+}
+.stores > div {
+    display: inline-block;
+    margin: 32px;
+    
+}
+.stores span {
+    font-size: 14px;
+    display: block;
+    text-transform: none;
+    font-weight: bold;
+    margin-top: 24px;
+}
+.stores a {
+	padding: 16px;
+	text-decoration: none;
+	font-size: 24px;
+	border-radius: 7px ;
+	color:#fff;
+	background-image: linear-gradient(40deg, #fc6076, #ff9a44);
+	border-top: 4px solid #fc6076;
+	text-transform: uppercase;
+}
+
+.stores div:nth-child(1) a{
+	background-image: linear-gradient(40deg, #c471f5, #fa71cd);
+}
+.stores div:nth-child(2) a{
+	background-image: linear-gradient(40deg, #ff758c, #ff7eb3);
+}
+.stores div:nth-child(3) a{
+	background-image: linear-gradient(40deg, #fc6076, #ff9a44);
+}
+.stores div:nth-child(4) a{
+	background-image: linear-gradient(40deg, #6088fc, #9844ff);
+}
+.desc{
+	 text-align: left;
+	 background: rgba(0,0,0,0.4);
+	padding: 3vw;
+}
+.desc span {
+    display: block;
+   
+}
